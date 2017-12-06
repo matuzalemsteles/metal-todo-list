@@ -1,0 +1,100 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	color: #737373;
+	font-family: Roboto, sans-serif;
+	background: #FCFCFC;
+}
+
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+
+.task {
+	padding-top: 40px;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	padding: 25px 0;
+}
+
+.lexicon-icon {
+    display: inline-block;
+    fill: currentColor;
+    height: 18px;
+    transform: translateZ(0);
+    vertical-align: middle;
+    width: 18px;
+}
+
+.Card {
+    position: relative;
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Card-button--close {
+    visibility: hidden;
+
+    a {
+        color: #85bd6e;
+    }
+}
+
+
+.Card:hover > .Card-button--close {
+    visibility: visible;
+}
+
+.truncat-text {
+    font-size: 16px;
+    color: #29353D;
+    line-height: 1.42857143;
+
+    &.completed {
+        text-decoration: line-through;
+    }
+}
+
+.form-control {
+    font-family: Roboto, sans-serif;
+    border: 0;
+    width: 100%;
+    font-size: 16px;
+    padding: 7px 4px;
+    background-color: transparent;
+    transition: 0.2s;
+    color: #728694;
+    border-bottom: 2px solid #869cae;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #d5dbdf;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-label {
+    color: #8294a0;
+    font-size: 14px;
+}
+
+.form-control:focus {
+    border-color: #76bbf1;
+    outline: 0;
+}

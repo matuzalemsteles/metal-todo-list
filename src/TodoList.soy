@@ -1,0 +1,65 @@
+{namespace TodoList}
+
+{template .render}
+	{@param tasks: list<[
+		id: string,
+		title: string
+	]>}
+	{@param add: any}
+
+	<div class="wrapper">
+		<div class="container">
+			<div class="form-group">
+				{call .input}
+					{param placeholder: 'Your task' /}
+					{param onChange: $add /}
+				{/call}
+			</div>
+
+			<div class="task">
+				{foreach $task in $tasks}
+					{call .card}
+						{param label: $task.title /}
+					{/call}
+				{ifempty}
+					{call .card}
+						{param label: 'Your list void.' /}
+					{/call}
+				{/foreach}
+			</div>
+			{call .footer}
+				{param tasks: $tasks /}
+			{/call}
+		</div>
+	</div>
+{/template}
+
+{template .input}
+	{@param placeholder: string }
+	{@param onChange : any}
+
+	<input class="form-control" placeholder="{$placeholder}" onChange="{$onChange}"/>
+{/template}
+
+{template .card}
+    {@param label : string}
+
+    <div class="Card">
+		<div class="Card-content">
+			<span class="truncat-text">
+        		{$label}
+			</span>
+		</div>
+    </div>
+{/template}
+
+{template .footer}
+	{@param tasks: list<[
+		id: string,
+		title: string
+	]>}
+
+	<div class="footer">
+		<span>Length <b>{length(keys($tasks))}</b></span>
+	</div>
+{/template}
